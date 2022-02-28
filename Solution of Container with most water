@@ -1,0 +1,23 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int l = 0;
+        int r = height.length-1;
+        int max = 0;
+        while(l<r)
+        {
+                int lh = height[l];
+                int rh = height[r];
+                int min_h = Math.min(lh,rh); // here we are storing the data of r
+                int len =   r-l; 
+                int curr_area = min_h*len;
+                max = Math.max(max,curr_area);
+                if(lh<rh) // if our height of last bar is bigger than our first bar so our area is decrement so thst we have to increment our lh in current example our lh=8 and our rh=7 here len = r-l = 8 - 1 = 7 and curr_area is our r so 7*7 = 49 and thats what we want.....
+                { l++;}
+                   
+                
+            else{ r--;} // now if our r is bigger than our l so we didnt get maximum area so r is must be less than l.... 
+        }
+         return max;
+        
+    }
+}
