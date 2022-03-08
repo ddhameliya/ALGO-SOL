@@ -1,0 +1,29 @@
+ public static int diagonalDifference(List<List<Integer>> arr) {
+    OPERATION WE PERFORM IS GIVEN BELOW 
+    /*[123
+     456
+     989]
+     
+     firstDiagonal = 1+5+9 = 14 FIRST CASE APPLY
+     secondDiagonal = 3+5+9 = 17 SECOND CASE APPLY
+     
+     return = |14-17| = 3*/
+    
+    
+    // CODE STARTS
+    int firstDiagonal = 0;
+    int secondDiagonal = 0;
+    
+    for(int i=0;i<arr.size();i++)
+    {
+        firstDiagonal = firstDiagonal + arr.get(i).get(i);    // THAT IS OUR FIRST CASE WHERE ROW=COL OF METRIX
+    }
+    for(int i=0;i<arr.size();i++)
+    {
+        secondDiagonal = secondDiagonal + arr.get(i).get(arr.size()-(i+1));  // THAT IS OUR SECOND CASE WHERE LRNGTH-(ROW+1)
+    }
+    return Math.abs(firstDiagonal-secondDiagonal);
+    
+
+    }
+    }
